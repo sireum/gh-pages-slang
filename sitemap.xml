@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://slang.sireum.org/tools/proyek/</loc>
+  </url><url>
+    <loc>https://slang.sireum.org/tools/cligen/</loc>
+  </url><url>
+    <loc>https://slang.sireum.org/tools/pg/</loc>
+  </url><url>
+    <loc>https://slang.sireum.org/tools/sergen/</loc>
+  </url><url>
+    <loc>https://slang.sireum.org/tools/trafo/</loc>
+  </url><url>
+    <loc>https://slang.sireum.org/tools/presentasi/</loc>
+  </url><url>
     <loc>https://slang.sireum.org/</loc>
   </url><url>
     <loc>https://slang.sireum.org/about/</loc>
@@ -9,5 +21,7 @@
     <loc>https://slang.sireum.org/categories/</loc>
   </url><url>
     <loc>https://slang.sireum.org/tags/</loc>
+  </url><url>
+    <loc>https://slang.sireum.org/tools/</loc>
   </url>
 </urlset>
