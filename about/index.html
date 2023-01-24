@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Slang is a modern mixed object-oriented/functional programming language with contract and proof languages designed first for formal safety/security verification and analyses. It serves as the basis for the next generation Logika verification framework, as well as for other formal method-based analysis techniques. It is currently a subset of Scala 2 with tailored semantics enabled via Scala&amp;rsquo;s macro and compiler plugin facilities, supported with a customized version of IntelliJ &amp;ndash; Sireum IVE, and an accompanying incremental/parallel build tool &amp;ndash; Proyek." />
+<meta name="description" content="Slang is a modern mix of object-oriented/functional programming language with contract and proof languages designed first for formal safety/security verification and analyses. It serves as the basis for the Sireum Logika verification framework, as well as for other formal method-based analysis techniques. Some key Slang designs to ease program reasoning are: (1) explicit separation of immutable and mutable static types, where immutables cannot refer to mutables, (2) object aliasing is restricted to a single language construct, i." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -42,15 +42,15 @@
 
 
 <meta itemprop="name" content="About">
-<meta itemprop="description" content="Slang is a modern mixed object-oriented/functional programming language with contract and proof languages designed first for formal safety/security verification and analyses. It serves as the basis for the next generation Logika verification framework, as well as for other formal method-based analysis techniques. It is currently a subset of Scala 2 with tailored semantics enabled via Scala&rsquo;s macro and compiler plugin facilities, supported with a customized version of IntelliJ &ndash; Sireum IVE, and an accompanying incremental/parallel build tool &ndash; Proyek.">
+<meta itemprop="description" content="Slang is a modern mix of object-oriented/functional programming language with contract and proof languages designed first for formal safety/security verification and analyses. It serves as the basis for the Sireum Logika verification framework, as well as for other formal method-based analysis techniques. Some key Slang designs to ease program reasoning are: (1) explicit separation of immutable and mutable static types, where immutables cannot refer to mutables, (2) object aliasing is restricted to a single language construct, i.">
 
-<meta itemprop="wordCount" content="297"><meta itemprop="image" content="https://slang.sireum.org"/>
+<meta itemprop="wordCount" content="365"><meta itemprop="image" content="https://slang.sireum.org"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://slang.sireum.org"/>
 
 <meta name="twitter:title" content="About"/>
-<meta name="twitter:description" content="Slang is a modern mixed object-oriented/functional programming language with contract and proof languages designed first for formal safety/security verification and analyses. It serves as the basis for the next generation Logika verification framework, as well as for other formal method-based analysis techniques. It is currently a subset of Scala 2 with tailored semantics enabled via Scala&rsquo;s macro and compiler plugin facilities, supported with a customized version of IntelliJ &ndash; Sireum IVE, and an accompanying incremental/parallel build tool &ndash; Proyek."/>
+<meta name="twitter:description" content="Slang is a modern mix of object-oriented/functional programming language with contract and proof languages designed first for formal safety/security verification and analyses. It serves as the basis for the Sireum Logika verification framework, as well as for other formal method-based analysis techniques. Some key Slang designs to ease program reasoning are: (1) explicit separation of immutable and mutable static types, where immutables cannot refer to mutables, (2) object aliasing is restricted to a single language construct, i."/>
 
 
 
@@ -264,20 +264,27 @@
 
             <div class="post-content">
                 <hr>
-<p>Slang is a modern mixed object-oriented/functional programming language
+Slang is a modern mix of object-oriented/functional programming language
 with contract and proof languages designed first for formal safety/security
-verification and analyses. It serves as the basis for the next generation
+verification and analyses. It serves as the basis for the <a href="https://sireum.org">Sireum</a>
 <a href="https://logika.sireum.org">Logika</a> verification framework, as well as for other
 formal method-based analysis techniques.
+Some key Slang designs to ease program reasoning are:
+(1) explicit separation of immutable and mutable static types,
+where immutables cannot refer to mutables,
+(2) object aliasing is restricted to a single language construct, i.e., method invocation,
+which has an intuitive and natural object borrowing boundary scope for compositional reasoning, and
+(3) a forest of type hierarchies (instead of a single rooted tree) for a more
+meaningful subtyping relationships.
 
-It is currently a subset of Scala 2 with tailored semantics
+<p>Slang is currently a subset of Scala 2 with tailored semantics
 enabled via Scala&rsquo;s macro and compiler plugin facilities,
 supported with a customized version of IntelliJ &ndash;
 <a href="https://sireum.org/ive">Sireum IVE</a>, and an accompanying
 incremental/parallel build tool &ndash; <a href="https://slang.sireum.org/tools/proyek">Proyek</a>.
 Most of the <a href="https://sireum.org">Sireum</a> codebase is written using
-Slang (including Slang itself).</p>
-<p>Slang programs run on the JVM (Java 8+), in the browser or Node.js
+Slang (including Slang itself).
+Slang programs run on the JVM (Java 8+), in the browser or Node.js
 (via <a href="http://scala-js.org">Scala.js</a> Javascript translation), and natively
 via <a href="http://graalvm.org">Graal</a> targeting macOS, Linux, and Windows on amd64, and
 macOS and Linux on aarch64.
@@ -289,14 +296,14 @@ in the form that is structurally close to the Slang source;
 in addition to <code>gcc</code> and <code>clang</code>, it can also be compiled using the
 <a href="https://compcert.org">CompCert</a> Verified C Compiler
 to provide a high-assurance toolchain for program correctness down to machine code.</p>
-<p>On all compilation targets (e.g., JVM, C, Javascript, etc.), Slang provides extension
+<p>On all compilation targets (e.g., JVM, Javascript, C, etc.), Slang provides extension
 method facilities that can extend its language features and integrate with other
 programming languages, platform-specific libraries, and existing/legacy code.
 Furthermore, Slang can also be used as a universal shell scripting language
 &ndash; <a href="https://slang.sireum.org/tools/slash">Slash</a>, which can run
-on macOS, Linux, Windows, and others where a JVM runtime is available and with
-full <a href="https://sireum.org/ive">Sireum IVE</a> support.
-Slash powers many of the shell scripts for developing Kekinian itself.
+on macOS, Linux, Windows, and others where a JVM runtime is available.
+<a href="https://sireum.org/ive">Sireum IVE</a> supports <a href="https://slang.sireum.org/tools/slash">Slash</a> scripting.
+<a href="https://slang.sireum.org/tools/slash">Slash</a> powers many of the shell scripts for developing <a href="https://sireum.org">Sireum</a> itself.
 As <a href="https://slang.sireum.org/tools/slash">Slash</a> is Slang, <a href="https://slang.sireum.org/tools/slash">Slash</a> scripts can be compiled
 to native via <a href="http://graalvm.org">Graal</a>, which speeds things up by virtue of having no JVM boot up time.</p>
 
