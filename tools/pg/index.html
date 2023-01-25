@@ -28,7 +28,7 @@
 
 
 
-<link rel="stylesheet" href="https://slang.sireum.org/main.752cd93029a25762d4c7dc061047da6edbc90c62b6c54044d881c110da86f52e.css" integrity="sha256-dSzZMCmiV2LUx9wGEEfabtvJDGK2xUBE2IHBENqG9S4=">
+<link rel="stylesheet" href="https://slang.sireum.org/main.9c922db2f0b1928ba9b9af3a728419aeceb48bb98c995643b646049dae60d067.css" integrity="sha256-nJItsvCxkoupua86coQZrs60i7mMmVZDtkYEna5g0Gc=">
 
 
 
@@ -273,26 +273,26 @@
 
         
 <div style="display: grid; grid-template-columns: 2% 49% 49%; text-align: center;">
+  <div class="submenu" style="background: transparent; text-align: left; position: relative;">
+    <li class="dropdown" onmouseover="menuDisplay(this.children[1], true);" onmouseout="menuDisplay(this.children[1], false);">
+      <a class="dropbtn" href=""><i class="fa-solid fa-angles-up"></i></a>
+      <div class="dropdown-content" style="bottom: 100%;"><a class="post-item-inner" href="https://slang.sireum.org/tools/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">Tools</a></div>
+    </li>
+  </div>
+  <div style="text-align: left;">
     
-    <div class="submenu" style="background: transparent; text-align: left;">
-        <li class="dropdown" onmouseover="menuDisplay(this.children[1], true);" onmouseout="menuDisplay(this.children[1], false);">
-            <a class="dropbtn" href="https://slang.sireum.org/tools/"><i class="fa-solid fa-square-caret-up"></i></a>
-            <div class="dropdown-content"><a class="post-item-inner" href="https://slang.sireum.org/tools/embedded/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">Slang Embedded to C Transpiler</a><a class="post-item-inner" href="https://slang.sireum.org/tools/proyek/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">Proyek Incremental/Parallel Build Tool</a><a class="post-item-inner" href="https://slang.sireum.org/tools/cligen/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">Command-line Interface Generator</a><a class="post-item-inner" href="https://slang.sireum.org/tools/sergen/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">JSON &amp; MessagePack De/Serializer Generator</a><a class="post-item-inner" href="https://slang.sireum.org/tools/trafo/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">Slang Visitor/Transformer Generator</a><a class="post-item-inner" href="https://slang.sireum.org/tools/presentasi/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">Presentasi JavaFX Presentation Generator</a><a class="post-item-inner" href="https://slang.sireum.org/tools/slash/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">Slash — Slang Universal Shell Scripting</a></div>
-        </li>
-    </div>
+      <a href="https://slang.sireum.org/tools/cligen/" style="text-decoration: none;" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">
+        <i class="fa-solid fa-chevron-left"></i> Command-line Interface Generator
+      </a>
     
-    <div style="text-align: left;">
-        
-        <a href="https://slang.sireum.org/tools/cligen/" style="text-decoration: none;" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">
-            <i class="fa-solid fa-square-caret-left"></i> Command-line Interface Generator
-        </a>
-        
-    </div>
-    <div style="text-align: right;">
-        <a href="https://slang.sireum.org/tools/sergen/" style="text-decoration: none;" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">JSON &amp; MessagePack De/Serializer Generator
-            <i class="fa-solid fa-square-caret-right"></i>
-        </a>
-    </div>
+  </div>
+  <div style="text-align: right;">
+    
+      <a href="https://slang.sireum.org/tools/sergen/" style="text-decoration: none;" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">JSON &amp; MessagePack De/Serializer Generator
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    
+  </div>
 </div>
 
 
