@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="[Pending]" />
+<meta name="description" content="The Sireum Parser Generator (PG) for Slang is a LL(k), PEG/Packrat (without syntactic predicates), or &amp;ldquo;mixed&amp;rdquo; (LL k-lookahead with backtracking) parser generator. PG generates a readable and easy-to-debug parser/lexer1 over Unicode codepoint stream in Slang, which can be compiled further to native (via Graal) or Javascript (via Scala.js). PG&amp;rsquo;s input grammar, is a small subset of ANTLR3&amp;rsquo;s grammar (e.g., without syntactic predicates and semantic actions), thus, AntlrWorks can be used as its grammar IDE to ease development." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -14,7 +14,7 @@
 
     <title>
         
-            Parser Generator :: Slang 
+            Sireum Parser Generator for Slang :: Slang 
         
     </title>
 
@@ -41,16 +41,16 @@
     <meta name="msapplication-TileColor" content="">
 
 
-<meta itemprop="name" content="Parser Generator">
-<meta itemprop="description" content="[Pending]">
+<meta itemprop="name" content="Sireum Parser Generator for Slang">
+<meta itemprop="description" content="The Sireum Parser Generator (PG) for Slang is a LL(k), PEG/Packrat (without syntactic predicates), or &ldquo;mixed&rdquo; (LL k-lookahead with backtracking) parser generator. PG generates a readable and easy-to-debug parser/lexer1 over Unicode codepoint stream in Slang, which can be compiled further to native (via Graal) or Javascript (via Scala.js). PG&rsquo;s input grammar, is a small subset of ANTLR3&rsquo;s grammar (e.g., without syntactic predicates and semantic actions), thus, AntlrWorks can be used as its grammar IDE to ease development.">
 
-<meta itemprop="wordCount" content="1"><meta itemprop="image" content="https://slang.sireum.org"/>
+<meta itemprop="wordCount" content="333"><meta itemprop="image" content="https://slang.sireum.org"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://slang.sireum.org"/>
 
-<meta name="twitter:title" content="Parser Generator"/>
-<meta name="twitter:description" content="[Pending]"/>
+<meta name="twitter:title" content="Sireum Parser Generator for Slang"/>
+<meta name="twitter:description" content="The Sireum Parser Generator (PG) for Slang is a LL(k), PEG/Packrat (without syntactic predicates), or &ldquo;mixed&rdquo; (LL k-lookahead with backtracking) parser generator. PG generates a readable and easy-to-debug parser/lexer1 over Unicode codepoint stream in Slang, which can be compiled further to native (via Graal) or Javascript (via Scala.js). PG&rsquo;s input grammar, is a small subset of ANTLR3&rsquo;s grammar (e.g., without syntactic predicates and semantic actions), thus, AntlrWorks can be used as its grammar IDE to ease development."/>
 
 
 
@@ -256,7 +256,7 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://slang.sireum.org/tools/pg/">Parser Generator</a></h2>
+            <h2 class="post-title"><a href="https://slang.sireum.org/tools/pg/">Sireum Parser Generator for Slang</a></h2>
 
             
             
@@ -264,7 +264,165 @@
 
             <div class="post-content">
                 <hr>
-<p>[Pending]</p>
+<div class="cycle-slideshow post" data-cycle-slides="> img" data-cycle-pause-on-hover="true" data-cycle-log="false">
+  <img class="color-scheme banner" src="https://slang.sireum.org/img/ive-parser.png" style="border: 0px; border-radius: 10px 10px 10px 10px;" data-cycle-timeout="4000">
+  <img class="banner" src="https://slang.sireum.org/img/antlrworks.png" style="border: 1px; border-radius: 10px 10px 10px 10px;" data-cycle-timeout="4000">
+  <img class="banner" src="https://slang.sireum.org/img/antlrworks-interpreter.png" style="border: 0px; border-radius: 10px 10px 10px 10px;" data-cycle-timeout="4000">
+  <img class="banner" src="https://slang.sireum.org/img/antlrworks-debugger.png" style="border: 0px; border-radius: 10px 10px 10px 10px;" data-cycle-timeout="4000">
+</div>
+<p>The <a href="https://sireum.org">Sireum</a> Parser Generator (PG) for Slang is a LL(<em>k</em>), PEG/Packrat (without syntactic predicates),
+or &ldquo;mixed&rdquo; (LL <em>k</em>-lookahead with backtracking) parser generator.
+PG generates a <em>readable</em> and <em>easy-to-debug</em> parser/lexer<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> over <em>Unicode codepoint stream</em> in Slang,
+which can be compiled further to native (via <a href="http://graalvm.org">Graal</a>) or Javascript (via <a href="http://scala-js.org">Scala.js</a>).
+PG&rsquo;s <a href="https://github.com/sireum/parser/blob/master/jvm/src/main/resources/SireumAntlr3.g">input grammar</a>,
+is a small subset of <a href="https://www.antlr3.org/">ANTLR3</a>&rsquo;s grammar (e.g., without syntactic predicates
+and semantic actions), thus, <a href="#antlrworks">AntlrWorks</a> can be used as its grammar IDE to ease development.</p>
+<p>As an example, PG uses its own
+<a href="https://github.com/sireum/parser/blob/master/shared/src/main/scala/org/sireum/parser/SireumGrammarParser.scala">generated parser/lexer</a>
+to parse its own input grammar.
+PG&rsquo;s generated parsers build general
+<a href="https://github.com/sireum/runtime/blob/master/library/shared/src/main/scala/org/sireum/parser/ParseTree.scala">parse trees</a>
+that come with: (1) a generic tree rewriting algorithm for binary operators with runtime-configurable
+precedence/associativity rules after parsing<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, and (2) <a href="http://graphviz.org">GraphViz</a>&rsquo;s <code>dot</code> input generation to
+help visualize parse trees
+(note that <a href="#antlrworks">AntlrWorks</a>&rsquo;s grammar interpreter/debugger also provides an excellent parse tree visualization
+tool).</p>
+<h3 id="running-pg">Running PG</h3>
+<p>Below is the command line for generating Slang parser/lexer using PG (use <code>--help</code> to see more PG options):</p>
+
+
+<div class="tab-panel">
+    <div class="tab-nav">
+        
+        <button
+                data-tab-item="macOS/Linux"
+                data-tab-group="pg-command"
+                class="tab-nav-button btn active"
+        onclick="switchTab(true, 'pg-command','macOS\/Linux')"
+        >macOS/Linux</button>
+        
+        <button
+                data-tab-item="Windows"
+                data-tab-group="pg-command"
+                class="tab-nav-button btn "
+        onclick="switchTab(true, 'pg-command','Windows')"
+        >Windows</button>
+        
+    </div>
+    <div class="tab-content">
+        
+        <div data-tab-item="macOS/Linux" data-tab-group="pg-command" class="tab-item active">
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">$SIREUM_HOME</span>/bin/sireum parser gen -l &lt;license.txt&gt; -p &lt;package-name&gt; -m slang -n &lt;generated-class-name&gt; -o &lt;output-dir&gt; &lt;grammar.g&gt; 
+</span></span></code></pre></div>
+    </div>
+    
+        <div data-tab-item="Windows" data-tab-group="pg-command" class="tab-item ">
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="nv">%SIREUM_HOME%</span>\bin\sireum parser gen -l <span class="p">&lt;</span>license.txt<span class="p">&gt;</span> -p <span class="p">&lt;</span>package-name<span class="p">&gt;</span> -m slang -n <span class="p">&lt;</span>generated-class-name<span class="p">&gt;</span> -o <span class="p">&lt;</span>output-dir<span class="p">&gt;</span> &lt;grammar.g&gt;
+</span></span></code></pre></div>
+    </div>
+    
+</div>
+</div>
+<p>For example, below is the command line to regenerate PG&rsquo;s parser/lexer using PG itself in the <a href="https://sireum.org">Sireum</a> source distribution:</p>
+
+
+<div class="tab-panel">
+    <div class="tab-nav">
+        
+        <button
+                data-tab-item="macOS/Linux"
+                data-tab-group="pg-command-example"
+                class="tab-nav-button btn active"
+        onclick="switchTab(true, 'pg-command-example','macOS\/Linux')"
+        >macOS/Linux</button>
+        
+        <button
+                data-tab-item="Windows"
+                data-tab-group="pg-command-example"
+                class="tab-nav-button btn "
+        onclick="switchTab(true, 'pg-command-example','Windows')"
+        >Windows</button>
+        
+    </div>
+    <div class="tab-content">
+        
+        <div data-tab-item="macOS/Linux" data-tab-group="pg-command-example" class="tab-item active">
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">$SIREUM_HOME</span>/bin/sireum parser gen -l <span class="nv">$SIREUM_HOME</span>/license.txt -p org.sireum.parser -m slang -n SireumGrammar --no-backtracking -o <span class="nv">$SIREUM_HOME</span>/parser/shared/src/main/scala/org/sireum/parser <span class="nv">$SIREUM_HOME</span>/parser/jvm/src/main/resources/SireumAntlr3.g 
+</span></span></code></pre></div>
+    </div>
+    
+        <div data-tab-item="Windows" data-tab-group="pg-command-example" class="tab-item ">
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="nv">%SIREUM_HOME%</span>\bin\sireum parser gen -l <span class="nv">%SIREUM_HOME%</span>\license.txt -p org.sireum.parser -m slang -n SireumGrammar --no-backtracking -o <span class="nv">%SIREUM_HOME%</span>\parser\shared\src\main\scala\org\sireum\parser <span class="nv">%SIREUM_HOME%</span>\parser\jvm\src\main\resources\SireumAntlr3.g
+</span></span></code></pre></div>
+    </div>
+    
+</div>
+</div>
+<h3 id="antlrworks">AntlrWorks</h3>
+<p><a href="https://www.antlr3.org/works/">AntlrWorks</a> is ANTLR3&rsquo;s recommended IDE. The <a href="https://sireum.org">Sireum</a>
+<a href="https://github.com/sireum/antlrworks">AntlrWorks fork</a> can be installed and launched as follows:</p>
+
+
+<div class="tab-panel">
+    <div class="tab-nav">
+        
+        <button
+                data-tab-item="macOS"
+                data-tab-group="antlrworks"
+                class="tab-nav-button btn active"
+        onclick="switchTab(true, 'antlrworks','macOS')"
+        >macOS</button>
+        
+        <button
+                data-tab-item="Linux"
+                data-tab-group="antlrworks"
+                class="tab-nav-button btn "
+        onclick="switchTab(true, 'antlrworks','Linux')"
+        >Linux</button>
+        
+        <button
+                data-tab-item="Windows"
+                data-tab-group="antlrworks"
+                class="tab-nav-button btn "
+        onclick="switchTab(true, 'antlrworks','Windows')"
+        >Windows</button>
+        
+    </div>
+    <div class="tab-content">
+        
+        <div data-tab-item="macOS" data-tab-group="antlrworks" class="tab-item active">
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="si">${</span><span class="nv">SIREUM_HOME</span><span class="si">}</span>/bin/install/antlrworks.cmd
+</span></span><span class="line"><span class="cl"><span class="si">${</span><span class="nv">SIREUM_HOME</span><span class="si">}</span>/bin/mac/java/bin/java -jar <span class="si">${</span><span class="nv">SIREUM_HOME</span><span class="si">}</span>/bin/antlrworks.jar 
+</span></span></code></pre></div>
+    </div>
+    
+        <div data-tab-item="Linux" data-tab-group="antlrworks" class="tab-item ">
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="si">${</span><span class="nv">SIREUM_HOME</span><span class="si">}</span>/bin/install/antlrworks.cmd
+</span></span><span class="line"><span class="cl"><span class="si">${</span><span class="nv">SIREUM_HOME</span><span class="si">}</span>/bin/linux/java/bin/java -jar <span class="si">${</span><span class="nv">SIREUM_HOME</span><span class="si">}</span>/bin/antlrworks.jar 
+</span></span></code></pre></div>
+    </div>
+    
+        <div data-tab-item="Windows" data-tab-group="antlrworks" class="tab-item ">
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="nv">%SIREUM_HOME%</span>\bin\sireum\antlrworks.cmd
+</span></span><span class="line"><span class="cl"><span class="nv">%SIREUM_HOME%</span>\bin\win\java\bin\java -jar <span class="nv">%SIREUM_HOME%</span>\bin\antlrworks.jar 
+</span></span></code></pre></div>
+    </div>
+    
+</div>
+</div>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>The generated parser/lexer code is essentially finite state machine (FSM) encodings of the input grammar rules with
+some &ldquo;cookie crumbs&rdquo; for readability sake (e.g., token string comments on FSM transitions).&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Useful, for example, to avoid grammar refactoring to enforce precedence/associativity rules, thus resulting in
+a more readable grammar, or to dynamically adapt precedence/associativity rules depending on a certain context.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
             </div>
         </article>
